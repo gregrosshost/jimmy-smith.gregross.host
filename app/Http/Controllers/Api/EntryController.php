@@ -16,8 +16,8 @@ class EntryController extends Controller
      */
     public function index()
     {
-        $entries = EntryResource::collection(Entry::all());
-        return $entries;
+        $entries = Entry::paginate();
+        return EntryResource::collection($entries);
     }
 
     /**
@@ -39,7 +39,7 @@ class EntryController extends Controller
      */
     public function show(Entry $entry)
     {
-       return new EntryResource($entry);
+        return new EntryResource($entry);
     }
 
     /**
