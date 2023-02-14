@@ -16,7 +16,7 @@ class EntryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "date" => Carbon::createFromDate( $this->date)->format('m-d'),
+            "date" => $this->date,
             "title" => $this->title,
             "content" => $this->content
         ];
