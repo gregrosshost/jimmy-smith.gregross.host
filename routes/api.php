@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('dates', EntryController::class)->parameters(['entries' => 'entry:date']);
+Route::apiResource('dates', EntryController::class)->parameters(['dates' => 'entry:date']);
